@@ -10,12 +10,19 @@ app.use(cors());
 app.use(bodyParser());
 app.use(router.routes()).use(router.allowedMethods());
 
+// const pool = new Pool({
+//   user: "postgres",
+//   host: "localhost",
+//   database: "Hasura-db",
+//   password: "admin@123",
+//   port: 5433,
+// });
 const pool = new Pool({
   user: "postgres",
-  host: "localhost",
-  database: "Hasura-db",
-  password: "admin@123",
-  port: 5433,
+  host: "hasura-test-rds.cqrnqcmido7u.ap-south-1.rds.amazonaws.com",
+  database: "postgres",
+  password: "admin123",
+  port: 5432,
 });
 
 router.get("/", (ctx, next) => {
