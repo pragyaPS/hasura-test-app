@@ -9,6 +9,7 @@ const App = () => {
   const [status, postData] = usePostData(apiConfig.addAlbum, albumParams);
 
   const handleFormSubmit = () => {
+    console.log(status)
     postData();
   }
   const handleChange = configVal => evt => {
