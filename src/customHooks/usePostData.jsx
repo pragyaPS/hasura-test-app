@@ -8,10 +8,9 @@ const usePostData = (url, params) => {
         async function postData(url = '', params = {}) {
             // Default options are marked with *
             const response = await fetch(url, {
-              method: 'POST', // *GET, POST, PUT, DELETE, etc.
+              method: 'POST', 
               headers: {
                 'Content-Type': 'application/json'
-                // 'Content-Type': 'application/x-www-form-urlencoded',
               },
               body: JSON.stringify(params) // body data type must match "Content-Type" header
             });
