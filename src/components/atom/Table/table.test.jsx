@@ -1,6 +1,6 @@
 import { render, cleanup } from "@testing-library/react";
-import { PARAM_NO_RECORD_FOUND } from "../../utils/constants";
-import Table from "./table";
+import { PARAM_NO_RECORD_FOUND } from "../../../utils/constants";
+import Table from "./index";
 
 describe("test rows", () => {
   test("should render no data found when data is blank array", () => {
@@ -10,9 +10,8 @@ describe("test rows", () => {
   test("should render data if passed", () => {
     let mockRows = [
       {
-        _id: "303",
-        name: "Australia",
-        __typename: "Country",
+        AlbumId: "303",
+        Title: "Australia",
       },
     ];
     let tableWrapper = render(<Table rows={mockRows} />);
