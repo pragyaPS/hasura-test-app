@@ -1,22 +1,24 @@
-import React from 'react';
-import useGetData from "./customHooks/useGetData";
-import {FETCH_STATUS} from "./utils/constants";
+import React from "react";
+import DashBoardPage from "./components/pages/Dashboard"
 
 const App = () => {
-    const [status, data] = useGetData("/all-albums");
-    if(status === FETCH_STATUS.idle) 
-        return <div>idle</div>
-    
-    if(status === FETCH_STATUS.fetching) 
-        return <div>Loading ...</div>
-    
-    console.log(data);
 
-    return (
-        <div>
-            <code>{data[0].Title}</code>
-        </div>
-    )
-}
+  const handleFormSubmit = () => {
+      console.info("");
+  }
+
+  return (
+    <div>
+        <form onSubmit={handleFormSubmit}>
+        <fieldset>
+          <label for="title">Album title</label>
+          <input name="title" />
+        </fieldset>
+        <button type="submit">Submit</button>
+      </form>
+      <DashBoardPage />
+    </div>
+  );
+};
 
 export default App;
