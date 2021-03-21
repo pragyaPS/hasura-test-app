@@ -1,6 +1,7 @@
 import Table from "../../atom/Table";
 import { ALBUM_LOADING_TEXT } from "../../../utils/constants";
 import Progress from "../../atom/Progress";
+import { table } from "./Dashboard.styles";
 
 const tableHeader = [
   { label: "select", columnId: "1" },
@@ -16,6 +17,7 @@ const AlbumList = ({ isAlbumLoading, albumList }) => {
       <Table
         rows={albumList}
         tableHeader={tableHeader}
+        className={table}
         handleRowSelect={(evt, row) => {
           console.info({ evt, row });
         }}

@@ -1,4 +1,4 @@
-import { render, cleanup } from "@testing-library/react";
+import { render } from "@testing-library/react";
 import { PARAM_NO_RECORD_FOUND } from "../../../utils/constants";
 import Table from "./index";
 
@@ -11,10 +11,10 @@ describe("test rows", () => {
     let mockRows = [
       {
         AlbumId: "303",
-        Title: "Australia",
+        Title: "testTitle",
       },
     ];
     let tableWrapper = render(<Table rows={mockRows} />);
-    expect(tableWrapper.findByText("Australia")).toBeInTheDocument;
+    expect(tableWrapper.findByText("testTitle")).toBeInTheDocument;
   });
 });

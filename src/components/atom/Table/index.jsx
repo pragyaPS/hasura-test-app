@@ -1,4 +1,4 @@
-import { Table as StyledTable, Th, Td } from "./table.style";
+import { Table as StyledTable, Th, Td, checkboxCell } from "./table.style";
 import { PARAM_NO_RECORD_FOUND } from "../../../utils/constants";
 import { isEmpty } from "../../../utils/util";
 
@@ -15,7 +15,7 @@ const Table = ({ rows, tableHeader, handleRowSelect, className }) => (
       {!isEmpty(rows) ? (
         rows.map((row, index) => (
           <tr key={row.AlbumId}>
-            <Td>
+            <Td className={checkboxCell}>
               <input
                 aria-roledescription={`checkbox-${row.Title}`}
                 type="checkbox"
@@ -32,9 +32,7 @@ const Table = ({ rows, tableHeader, handleRowSelect, className }) => (
           </tr>
         ))
       ) : (
-        <tr>
-          <Td>{PARAM_NO_RECORD_FOUND}</Td>
-        </tr>
+        <div>{PARAM_NO_RECORD_FOUND}</div>
       )}
     </tbody>
   </StyledTable>
